@@ -63,7 +63,7 @@ class Hero():
                     punch_chance -= 1
                 else:
                     chance = randint(1, 100)
-                    if chance > punch_chance * 100:
+                    if chance < punch_chance * 100:
                         self.attack(knight)
                     else:
                         self.parry(knight)
@@ -81,7 +81,7 @@ class Hero():
                     punch_chance -= 1
                 else:
                     chance = randint(1, 100)
-                    if chance > punch_chance * 100:
+                    if chance < punch_chance * 100:
                         knight.attack(self)
                     else:
                         knight.parry(self)
@@ -93,9 +93,9 @@ class Hero():
                 break
 
 
-rapier = Weapon('Рапира "Ярость Бездны" ', 3, 750, 2.7, 85, 65)
-claymore = Weapon('Меч безжалостной волны', 18, 1200, 0.7, 150, 25)
-f_knight = Hero('Гер Какёин', '90', 18000, 250, 1400, rapier)
+rapier = Weapon('Рапира "Ярость Бездны" ', 3, 600, 2.7, 70, 65)
+claymore = Weapon('Меч безжалостной волны', 16, 1500, 0.7, 150, 45)
+f_knight = Hero('Гер Какёин', '90', 17000, 250, 1400, rapier)
 s_knight = Hero('Альфред Фон Дио', '87', 19000, 400, 1600, claymore)
 f_knight.print_info(rapier)
 s_knight.print_info(claymore)
