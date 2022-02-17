@@ -3,7 +3,7 @@ from random import randint
 
 class Hero:
     # Шаблон персонажа(лвл ни на что не влияет)
-    def __init__(self, name, lvl, health, armor, power, weap):
+    def __init__(self, name, lvl, health, armor, power, weapon):
         self.name = name
         self.lvl = lvl
         self.health = health
@@ -11,12 +11,12 @@ class Hero:
         self.power = power
         self.weight = 50
         # Общая сила учитывая силу оружия
-        self.apower = self.power + weap.atk
+        self.apower = self.power + weapon.atk
         # Подсчет ловкости засчепт параметров веса и скорости атаки оружия
-        self.speed = (1 - ((self.armor / 10 + weap.w_weight) / 100)) * weap.atk_speed
+        self.speed = (1 - ((self.armor / 10 + weapon.w_weight) / 100)) * weapon.atk_speed
         # Присвоил персонажу криты, чтобы не переписывать 2 раза функцию атаки для 2 персов
-        self.crit_rate = weap.crit_rate
-        self.crit = weap.crit
+        self.crit_rate = weapon.crit_rate
+        self.crit = weapon.crit
 
     def print_info(self, weap):
         # Инфа о созданном герое
