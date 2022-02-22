@@ -9,5 +9,3 @@ class Weapon:
         self.atk_speed = atk_speed
         self.crit = crit
         self.crit_rate = crit_rate
-
-# Создал класс героев
