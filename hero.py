@@ -1,5 +1,6 @@
 from random import randint
 
+
 # Создал класс героев
 class Hero:
     # Шаблон персонажа (лвл ни на что не влияет)
@@ -24,7 +25,7 @@ class Hero:
 
     def print_info(self, weapon):
         # Инфа о созданном герое
-        print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80,90)) + '-го уровня')
+        print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80, 90)) + '-го уровня')
         print('Оружие:', weapon.ws['name'])
         print('Уровень здоровья:', self.hs['health'])
         print('С уровнем защищенности', self.hs['armor'])
