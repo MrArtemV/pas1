@@ -36,55 +36,39 @@ axe.weapon_info()
 
 # Выбор 1 героя
 name = int(input('Выбирите героя (номер по порядку)'))
-if name == 1:
-    first_knight.assignment(knight)
-elif name == 2:
-    first_knight.assignment(ninja)
-elif name == 3:
-    first_knight.assignment(archer)
-elif name == 4:
-    first_knight.assignment(heavy_knight)
-elif name == 5:
-    first_knight.assignment(student)
+match name:
+    case 1: first_knight.assignment(knight)
+    case 2: first_knight.assignment(ninja)
+    case 3: first_knight.assignment(archer)
+    case 4: first_knight.assignment(heavy_knight)
+    case 5: first_knight.assignment(student)
 
 # Выбор 1 оружия
 weapon = int(input('Выбирите оружие (номер по порядку)'))
-if weapon == 1:
-    first_weapon.assignment(sword)
-if weapon == 2:
-    first_weapon.assignment(rapier)
-if weapon == 3:
-    first_weapon.assignment(bow)
-if weapon == 4:
-    first_weapon.assignment(claymore)
-if weapon == 5:
-    first_weapon.assignment(axe)
+match weapon:
+    case 1: first_weapon.assignment(sword)
+    case 2: first_weapon.assignment(rapier)
+    case 3: first_weapon.assignment(bow)
+    case 4: first_weapon.assignment(claymore)
+    case 5: first_weapon.assignment(axe)
 
 # Выбор 2 героя
 name = int(input('Выбирите второго героя (обязательно другой герой)'))
-if name == 1:
-    second_knight.assignment(knight)
-elif name == 2:
-    second_knight.assignment(ninja)
-elif name == 3:
-    second_knight.assignment(archer)
-elif name == 4:
-    second_knight.assignment(heavy_knight)
-elif name == 5:
-    second_knight.assignment(student)
+match name:
+    case 1: second_knight.assignment(knight)
+    case 2: second_knight.assignment(ninja)
+    case 3: second_knight.assignment(archer)
+    case 4: second_knight.assignment(heavy_knight)
+    case 5: second_knight.assignment(student)
 
 # Выбор 2 оружия
 weapon = int(input('Выбирите оружие (обязательно другое оружие)'))
-if weapon == 1:
-    second_weapon.assignment(sword)
-if weapon == 2:
-    second_weapon.assignment(rapier)
-if weapon == 3:
-    second_weapon.assignment(bow)
-if weapon == 4:
-    second_weapon.assignment(claymore)
-if weapon == 5:
-    second_weapon.assignment(axe)
+match weapon:
+    case 1: first_weapon.assignment(sword)
+    case 2: first_weapon.assignment(rapier)
+    case 3: first_weapon.assignment(bow)
+    case 4: first_weapon.assignment(claymore)
+    case 5: first_weapon.assignment(axe)
 
 print('')
 
