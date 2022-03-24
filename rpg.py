@@ -34,6 +34,7 @@ bow.weapon_info()
 claymore.weapon_info()
 axe.weapon_info()
 
+# Выбор 1 героя
 name = int(input('Выбирите героя (номер по порядку)'))
 if name == 1:
     first_knight.assignment(knight)
@@ -46,7 +47,7 @@ elif name == 4:
 elif name == 5:
     first_knight.assignment(student)
 
-
+# Выбор 1 оружия
 weapon = int(input('Выбирите оружие (номер по порядку)'))
 if weapon == 1:
     first_weapon.assignment(sword)
@@ -59,57 +60,31 @@ if weapon == 4:
 if weapon == 5:
     first_weapon.assignment(axe)
 
-s_name = int(input('Выбирите второго героя (обязательно другой герой)'))
-if s_name == 1:
+# Выбор 2 героя
+name = int(input('Выбирите второго героя (обязательно другой герой)'))
+if name == 1:
     second_knight.assignment(knight)
-elif s_name == 2:
+elif name == 2:
     second_knight.assignment(ninja)
-elif s_name == 3:
+elif name == 3:
     second_knight.assignment(archer)
-elif s_name == 4:
+elif name == 4:
     second_knight.assignment(heavy_knight)
-elif s_name == 5:
+elif name == 5:
     second_knight.assignment(student)
 
-while name == s_name:
-    print('Этот герой занят!')
-    s_name = int(input('Выбирите второго героя'))
-    if s_name == 1:
-        second_knight.assignment(knight)
-    elif s_name == 2:
-        second_knight.assignment(ninja)
-    elif s_name == 3:
-        second_knight.assignment(archer)
-    elif s_name == 4:
-        second_knight.assignment(heavy_knight)
-    elif s_name == 5:
-        second_knight.assignment(student)
-
-s_weapon = int(input('Выбирите оружие (обязательно другое оружие)'))
-if s_weapon == 1:
+# Выбор 2 оружия
+weapon = int(input('Выбирите оружие (обязательно другое оружие)'))
+if weapon == 1:
     second_weapon.assignment(sword)
-if s_weapon == 2:
+if weapon == 2:
     second_weapon.assignment(rapier)
-if s_weapon == 3:
+if weapon == 3:
     second_weapon.assignment(bow)
-if s_weapon == 4:
+if weapon == 4:
     second_weapon.assignment(claymore)
-if s_weapon == 5:
+if weapon == 5:
     second_weapon.assignment(axe)
-
-while weapon == s_weapon:
-    print('Это оружие занято!')
-    s_weapon = int(input('Выбирите оружие'))
-    if s_weapon == 1:
-        second_weapon.assignment(sword)
-    if s_weapon == 2:
-        second_weapon.assignment(rapier)
-    if s_weapon == 3:
-        second_weapon.assignment(bow)
-    if s_weapon == 4:
-        second_weapon.assignment(claymore)
-    if s_weapon == 5:
-        second_weapon.assignment(axe)
 
 print('')
 
@@ -123,4 +98,4 @@ second_knight.print_info(second_weapon)
 
 # Бой
 first_knight.fight(second_knight)
-# Баланс. Нужен баланс.
+# Баланс. Нужен баланс

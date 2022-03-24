@@ -11,6 +11,7 @@ class Weapon:
         self.ws = {'name': self.name, 'weight': self.weight, 'atk': self.atk, 'atk_speed': self.atk_speed,
                    'crit': self.crit, 'crit_rate': self.crit_rate}
 
+    # Передача хар-к классса к оружию
     def assignment(self, class_of_weapon):
         self.ws = class_of_weapon.ws.copy()
 
