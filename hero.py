@@ -2,8 +2,8 @@ from random import randint
 
 
 # Создал класс героев
-class Hero:
-    # Шаблон класса
+class Hero():
+    # Шаблон персонажа (лвл ни на что не влияет)
     def __init__(self, name='', health=0, armor=0, atk=0, weight=0, agility=0, crit_rate=0):
         self.name = name
         self.health = health
@@ -14,7 +14,6 @@ class Hero:
         self.crit_rate = crit_rate
         self.crit = 0
 
-    # Передача хар-к класса к герою
     def assignment(self, class_of_hero):
         self.name = class_of_hero.name
         self.health = class_of_hero.health
@@ -24,7 +23,6 @@ class Hero:
         self.agility = class_of_hero.agility
         self.crit_rate = class_of_hero.crit_rate
 
-    # Финальная корректировка хар-к
     def stats(self, weapon):
         self.health += 15000
         self.armor += 500
@@ -39,7 +37,6 @@ class Hero:
                    'all_weight': self.weight, 'all_agility': self.agility, 'crit': self.crit,
                    'crit_rate': self.crit_rate}
 
-    # Информация о классе
     def class_info(self):
         print('Имя героя:', self.name,
               '\nБонусные характеристики:',
@@ -47,7 +44,6 @@ class Hero:
               '\nБроня:', self.armor, '    Вес:', self.weight,
               '\nЛовкость:', self.agility, '    Крит. шанс:', self.crit_rate, '\n\n')
 
-    # Информация о готовом герое с оружием
     def print_info(self, weapon):
         # Инфа о созданном герое
         print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80, 90)) + '-го уровня',
