@@ -47,7 +47,7 @@ elif name == 5:
     first_knight.assignment(student)
 
 
-weapon = input('Выбирите оружие (номер по порядку)')
+weapon = int(input('Выбирите оружие (номер по порядку)'))
 if weapon == 1:
     first_weapon.assignment(sword)
 if weapon == 2:
@@ -85,7 +85,7 @@ while name == s_name:
     elif s_name == 5:
         second_knight.assignment(student)
 
-s_weapon = input('Выбирите оружие (обязательно другое оружие)')
+s_weapon = int(input('Выбирите оружие (обязательно другое оружие)'))
 if s_weapon == 1:
     second_weapon.assignment(sword)
 if s_weapon == 2:
@@ -99,7 +99,7 @@ if s_weapon == 5:
 
 while weapon == s_weapon:
     print('Это оружие занято!')
-    s_weapon = input('Выбирите оружие')
+    s_weapon = int(input('Выбирите оружие'))
     if s_weapon == 1:
         second_weapon.assignment(sword)
     if s_weapon == 2:
@@ -111,14 +111,16 @@ while weapon == s_weapon:
     if s_weapon == 5:
         second_weapon.assignment(axe)
 
+print('')
+
 # Коррекция статов героев
 first_knight.stats(first_weapon)
 second_knight.stats(second_weapon)
 
 # Вывожу инфу о героях и их оружиях на экран
 first_knight.print_info(first_weapon)
-first_knight.print_info(second_weapon)
+second_knight.print_info(second_weapon)
 
 # Бой
 first_knight.fight(second_knight)
-# Нужно сделать панель выбора классов и оружий с описанием классов и оружий, соответственно
+# Баланс. Нужен баланс.

@@ -14,7 +14,6 @@ class Hero:
         self.crit_rate = crit_rate
         self.crit = 0
 
-
     def assignment(self, class_of_hero):
         self.name = class_of_hero.name
         self.health = class_of_hero.health
@@ -25,6 +24,10 @@ class Hero:
         self.crit_rate = class_of_hero.crit_rate
 
     def stats(self, weapon):
+        self.health += 15000
+        self.armor += 500
+        self.atk += 1500
+        self.weight += 50
         self.weight = self.weight + weapon.ws['weight']
         self.atk = self.atk + weapon.ws['atk']
         self.agility = self.agility + ((1 - ((self.armor / 30 + self.weight / 5) / 100)) * weapon.ws['atk_speed'])
@@ -44,7 +47,6 @@ class Hero:
     def print_info(self, weapon):
         # Инфа о созданном герое
         print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80, 90)) + '-го уровня',
-              '\nОружие:', weapon.ws['name'],
               '\nУровень здоровья:', self.hs['health'],
               '\nС уровнем защищенности', self.hs['armor'],
               '\nСила героя:', self.hs['all_atk'],
