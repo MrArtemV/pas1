@@ -1,45 +1,66 @@
 from random import randint
 
+
 # Создал класс героев
 class Hero:
     # Шаблон персонажа (лвл ни на что не влияет)
-    def __init__(self, name, health, armor, atk, weight, agility, critical_rate):
+    def __init__(self, name='', health=0, armor=0, atk=0, weight=0, agility=0, crit_rate=0):
         self.name = name
-        self.health = health + 15000
-        self.armor = armor + 500
-        self.atk = atk + 1500
-        self.weight = weight + 50
+        self.health = health
+        self.armor = armor
+        self.atk = atk
+        self.weight = weight
         self.agility = agility
-        self.critical_rate = critical_rate
+        self.crit_rate = crit_rate
+        self.crit = 0
+
+
+    def assignment(self, class_of_hero):
+        self.name = class_of_hero.name
+        self.health = class_of_hero.health
+        self.armor = class_of_hero.armor
+        self.atk = class_of_hero.atk
+        self.weight = class_of_hero.weight
+        self.agility = class_of_hero.agility
+        self.crit_rate = class_of_hero.crit_rate
 
     def stats(self, weapon):
-        self.aweight = self.weight + weapon.ws['weight']
-        self.aatk = self.atk + weapon.ws['atk']
-        self.aagility = self.agility + ((1 - ((self.armor / 30 + self.aweight / 5) / 100)) * weapon.ws['atk_speed'])
-        self.crit_rate = self.critical_rate + weapon.ws['crit_rate']
+        self.weight = self.weight + weapon.ws['weight']
+        self.atk = self.atk + weapon.ws['atk']
+        self.agility = self.agility + ((1 - ((self.armor / 30 + self.weight / 5) / 100)) * weapon.ws['atk_speed'])
+        self.crit_rate = self.crit_rate + weapon.ws['crit_rate']
         self.crit = weapon.ws['crit']
-        self.hs = {'name': self.name, 'health': self.health, 'armor': self.armor, 'all_atk': self.aatk,
-                   'all_weight': self.aweight, 'all_agility': self.aagility, 'crit': self.crit,
+        self.hs = {'name': self.name, 'health': self.health, 'armor': self.armor, 'all_atk': self.atk,
+                   'all_weight': self.weight, 'all_agility': self.agility, 'crit': self.crit,
                    'crit_rate': self.crit_rate}
+
+    def class_info(self):
+        print('Имя героя:', self.name,
+              '\nБонусные характеристики:',
+              '\nЗдоровье:', self.health, '    Сила атаки:',  self.atk,
+              '\nБроня:', self.armor, '    Вес:', self.weight,
+              '\nЛовкость:', self.agility, '    Крит. шанс:', self.crit_rate, '\n\n')
 
     def print_info(self, weapon):
         # Инфа о созданном герое
-        print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80,90)) + '-го уровня')
-        print('Оружие:', weapon.ws['name'])
-        print('Уровень здоровья:', self.hs['health'])
-        print('С уровнем защищенности', self.hs['armor'])
-        print('Сила героя:', self.hs['all_atk'])
-        print('Масса героя:', self.hs['all_weight'])
-        print('Коэффицент ловкости:', self.hs['all_agility'], '\n')
-        print('Характеристики оружия', weapon.ws['name'], '\nМасса:', weapon.ws['weight'], '\nБазовый урон:',
-              weapon.ws['atk'],
-              '\nСкорость атаки:', weapon.ws['atk_speed'], '\nКритической урон:', weapon.ws['crit'], '%',
-              '\nШанс критического удара:',
-              weapon.ws['crit_rate'], '%\n\n')
+        print('Овации для сегодняшнего героя', self.hs['name'], str(randint(80, 90)) + '-го уровня',
+              '\nОружие:', weapon.ws['name'],
+              '\nУровень здоровья:', self.hs['health'],
+              '\nС уровнем защищенности', self.hs['armor'],
+              '\nСила героя:', self.hs['all_atk'],
+              '\nМасса героя:', self.hs['all_weight'],
+              '\nКоэффицент ловкости:', self.hs['all_agility'],
+              '\nХарактеристики оружия', weapon.ws['name'],
+              '\nМасса:', weapon.ws['weight'],
+              '\nБазовый урон:', weapon.ws['atk'],
+              '\nСкорость атаки:', weapon.ws['atk_speed'],
+              '\nКритической урон:', weapon.ws['crit'], '%',
+              '\nШанс критического удара:', weapon.ws['crit_rate'], '%\n\n')
 
     # Функция атаки
     def attack(self, knight):
-        print('Нанесен удар! Герой', self.hs['name'], 'атаковал', knight.hs['name'], 'с силой удара', self.hs['all_atk'], '\n')
+        print('Нанесен удар! Герой', self.hs['name'], 'атаковал', knight.hs['name'], 'с силой удара',
+              self.hs['all_atk'], '\n')
         # Подсчет вероятности крит удара
         ch = randint(1, 100)
         if ch >= self.hs['crit_rate']:
