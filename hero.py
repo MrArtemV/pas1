@@ -2,7 +2,7 @@ from random import randint
 
 
 # Создал класс героев
-class Hero():
+class Hero:
     # Шаблон персонажа (лвл ни на что не влияет)
     def __init__(self, name='', health=0, armor=0, atk=0, weight=0, agility=0, crit_rate=0):
         self.name = name
