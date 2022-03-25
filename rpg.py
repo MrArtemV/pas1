@@ -71,4 +71,4 @@ second_knight.print_info(second_weapon)
 
 # Бой
 first_knight.fight(second_knight)
-# Баланс. Нужен баланс
+# Баланс. Нужен баланс.
